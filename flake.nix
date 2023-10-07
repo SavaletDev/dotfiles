@@ -46,35 +46,17 @@
   in
   {
     nixosConfigurations = {
-      NixAchu-Fix = nixpkgs.lib.nixosSystem {
+      PC-2 = nixpkgs.lib.nixosSystem {
         inherit system;
         #### ----------------------------------------------------- ####
         modules = default_modules ++ [
           (import ./computer.nix {
-            hostname = "NixAchu-Fix";
+            hostname = "PC-2";
             inherit username;
             inherit home-manager;
           })
         ];
       };
-      ### --------------------------------------------------------- ###
-      NixAchu-Portable = nixpkgs.lib.nixosSystem {
-        inherit system;
-        #### ----------------------------------------------------- ####
-        modules = default_modules ++ [
-          (import ./computer.nix {
-            hostname = "NixAchu-Portable";
-            inherit username;
-            inherit home-manager;
-          })
-          ##### ------------------------------------------------- #####
-          nixos-hardware.nixosModules.asus-battery
-          nixos-hardware.nixosModules.common-cpu-intel
-          nixos-hardware.nixosModules.common-pc
-          nixos-hardware.nixosModules.common-pc-ssd
-        ];
-      };
-    };
   };
 #######################################################################
 }
