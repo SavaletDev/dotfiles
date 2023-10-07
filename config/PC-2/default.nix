@@ -18,9 +18,5 @@
       "vfio_iommu_type1"
       "vfio_virqfd"
     ];
-
-    kernelParams = [
-      "intel_iommu=on"
-    ];
   };
 }
