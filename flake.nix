@@ -46,7 +46,7 @@
   in
   {
     nixosConfigurations = {
-      PC-2 = nixpkgs.lib.nixosSystem {
+      nixos = nixpkgs.lib.nixosSystem {
         inherit system;
         #### ----------------------------------------------------- ####
         modules = default_modules ++ [
@@ -58,5 +58,6 @@
         ];
       };
   };
+};
 #######################################################################
 }
